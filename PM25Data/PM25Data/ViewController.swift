@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class ViewController: UIViewController {
     @IBOutlet weak var showLabel: UILabel!
     func loadPM25Data(){
@@ -18,23 +18,33 @@ class ViewController: UIViewController {
         //创建请求对象
         let request = URLRequest(url: url!)
         let session = URLSession.shared
-        let semaphore = DispatchSemaphore(value: 0)
+        //let semaphore = DispatchSemaphore(value: 0)
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
                                                 print(error!)
                                             }else{
-                                                let str = String(data: data!, encoding: String.Encoding.utf8)
-                                                //print(str!)
-                                                print("\(String(describing: data))");
+                                                do {
+                                                    let json = try JSON(data: data!);
+                                                    let pol = json[0]["pollutants"][0]["value"].float;
+                                                    print("pol：",pol!);
+                                                    if ((pol) != nil) {
+                                                        DispatchQueue.main.async { // Correct
+                                                             self.showLabel.text = "PM2.5:\(pol!)";
+                                                        }
+                                                    }
+                                                }
+                                                catch{}
+                                                //let str = String(data: data!, encoding: String.Encoding.utf8);
+                                                
                                             }
-                                            semaphore.signal()
+                                            //semaphore.signal()
         }) as URLSessionTask
         
         //使用resume方法启动任务
         dataTask.resume()
         
-        _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+        //_ = semaphore.wait(timeout: DispatchTime.distantFuture)
         //print("数据加载完毕！")
     }
     override func viewDidLoad() {

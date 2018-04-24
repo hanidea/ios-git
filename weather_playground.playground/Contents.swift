@@ -25,6 +25,7 @@ let dataTask = session.dataTask(with: request,
                                     }else{
                                         let str = String(data: data!, encoding: String.Encoding.utf8)
                                         
+                                        
                                     }
                                     
                                     semaphore.signal()
