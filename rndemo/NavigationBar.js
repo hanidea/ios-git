@@ -48,7 +48,7 @@ export default class NavigationBar extends Component{
             {this.props.rightButton}
         </View>
         return (
-            <View style={styles.container}>
+            <View style={[styles.container,this.props.style]}>
                 {status}
                 {content}
             </View>
@@ -63,7 +63,6 @@ const styles=StyleSheet.create({
         justifyContent:'space-between',
         alignItems:'center',
         height: Platform.OS === 'ios' ? NAV_BAR_HEIGHT_IOS : NAV_BAR_HEIGHT_ANDROID,
-        backgroundColor:'red',
         flexDirection:'row'
     },
     titleViewContainer:{

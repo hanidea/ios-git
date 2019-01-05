@@ -18,9 +18,7 @@ export default class Boy extends Component{
             <View style={styles.container}>
                 <NavigationBar
                     title={'Boy'}
-                    statusBar={{
-                        backgroundColor:'red'
-                    }}
+                    style={{backgroundColor: '#6495ED'}}
                 />
                 <Text style={styles.text}>I am Boy</Text>
                 <Text style={styles.text} 
