@@ -10,17 +10,14 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 type Props = {};
-export default class Page1 extends Component<Props> {
-  // static navigationOptions={
-  //   title: 'Page1'
-  // }
+export default class Page2 extends Component<Props> {
   static navigationOptions = ({navigation}) => ({
     title: ` ${navigation.state.params.name}`,       //前一个页面传来的对象的name属性
   })
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>欢迎来到page1</Text>
+        <Text style={styles.welcome}>欢迎来到page2</Text>
         <Button title="go to homepage" onPress={() => this.props.navigation.goBack()} />
       </View>
     );
