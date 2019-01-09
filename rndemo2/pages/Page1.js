@@ -10,12 +10,12 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 type Props = {};
-export default class HomePage extends Component<Props> {
+export default class Page1 extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>欢迎来到homepage</Text>
-        <Button title="go to page1" onPress={() => this.props.navigation.navigate('Page1')} />
+        <Text style={styles.welcome}>欢迎来到page1</Text>
+        <Button title="go to homepage" onPress={() => this.props.navigation.goBack()} />
       </View>
     );
   }
