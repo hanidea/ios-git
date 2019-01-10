@@ -20,7 +20,7 @@ export default class Page3 extends Component<Props> {
       <View style={styles.container}>
         <Text style={styles.welcome}>欢迎来到page3</Text>
         <Button title="go to homepage" onPress={() => navigation.goBack()} />
-        <Text>{showText}</Text>
+        {/* <Text>{showText}</Text> */}
         <TextInput
         style={styles.input}
         onChangeText={text=>{

@@ -4,11 +4,53 @@
 
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View ,Button} from 'react-native'
-import { createStackNavigator, createAppContainer } from 'react-navigation'
+import { createStackNavigator, createAppContainer,  createBottomTabNavigator} from 'react-navigation'
 import HomePage from './pages/HomePage'
 import Page1 from './pages/Page1'
 import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+const AppTabNavigator = createBottomTabNavigator({
+    Page1:{
+      screen:Page1,
+      navigationOptions:{
+        tabBarLabel:'Page1',
+        tabBarIcon:(tintColor,focused)=>(
+            <Ionicons
+                name={focused?'ios-home':'ios-home'}
+                size={26}
+                // style={{color:tintColor}}
+            />
+        ),
+      }
+    },
+    Page2:{
+      screen:Page2,
+      navigationOptions:{
+        tabBarLabel:'Page2',
+        tabBarIcon:(tintColor,focused)=>(
+            <Ionicons
+                name={focused?'ios-people':'ios-person'}
+                size={26}
+                // style={{color:tintColor}}
+            />
+        ),
+      }
+    },
+    Page3:{
+      screen:Page3,
+      navigationOptions:{
+        tabBarLabel:'Page3',
+        tabBarIcon:(tintColor,focused)=>(
+            <Ionicons
+                name={focused?'ios-chatboxes':'ios-chatboxes'}
+                size={26}
+                // style={{color:tintColor}}
+            />
+        ),
+      }
+    }
+});
 const AppNavigator = createStackNavigator({
   HomePage: { screen: HomePage,
     navigationOptions:{
@@ -35,10 +77,15 @@ const AppNavigator = createStackNavigator({
       }
     }
   },
+  TabNav:{
+    screen:AppTabNavigator,
+    navigationOptions:{
+      title: 'This is TabNavigator'
+    }
+  }
 })
 
 export default createAppContainer(AppNavigator)
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
