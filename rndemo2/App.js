@@ -15,12 +15,12 @@ const AppTabNavigator = createBottomTabNavigator({
       screen:Page1,
       navigationOptions:{
         tabBarLabel:'Page1',
-        tabBarIcon:(tintColor,focused)=>(
-            <Ionicons
-                name={focused?'ios-home':'ios-home'}
-                size={26}
-                // style={{color:tintColor}}
-            />
+        tabBarIcon: ({tintColor, focused}) => (
+          <Ionicons
+              name={'ios-home'}
+              size={26}
+              style={{color: tintColor}}
+          />
         ),
       }
     },
@@ -28,11 +28,11 @@ const AppTabNavigator = createBottomTabNavigator({
       screen:Page2,
       navigationOptions:{
         tabBarLabel:'Page2',
-        tabBarIcon:(tintColor,focused)=>(
+        tabBarIcon:({tintColor,focused})=>(
             <Ionicons
-                name={focused?'ios-people':'ios-person'}
+                name={'ios-people'}
                 size={26}
-                // style={{color:tintColor}}
+                style={{color: tintColor}}
             />
         ),
       }
@@ -41,11 +41,11 @@ const AppTabNavigator = createBottomTabNavigator({
       screen:Page3,
       navigationOptions:{
         tabBarLabel:'Page3',
-        tabBarIcon:(tintColor,focused)=>(
+        tabBarIcon:({tintColor,focused})=>(
             <Ionicons
-                name={focused?'ios-chatboxes':'ios-chatboxes'}
+                name={'ios-chatboxes'}
                 size={26}
-                // style={{color:tintColor}}
+                style={{color: tintColor}}
             />
         ),
       }
