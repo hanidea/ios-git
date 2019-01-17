@@ -19,6 +19,7 @@ export default class HomePage extends Component<Props> {
         <Button title="go to page2" onPress={() => this.props.navigation.navigate('Page2',{name:'动态的page2'})} />
         <Button title="go to page3" onPress={() => this.props.navigation.navigate('Page3',{title:'James'})} />
         <Button title="go to TabNavigator" onPress={() => this.props.navigation.navigate('TabNav',{title:'James'})} />
+        <Button title="go to DrawerNav" onPress={() => this.props.navigation.navigate('DrawerNav',{title:'James'})} />
       </View>
     );
   }

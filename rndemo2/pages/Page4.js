@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 type Props = {};
-export default class Page1 extends Component<Props> {
+export default class Page4 extends Component<Props> {
   // static navigationOptions={
   //   title: 'Page1'
   // }
@@ -19,13 +19,12 @@ export default class Page1 extends Component<Props> {
   })
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>欢迎来到page1</Text>
-        <Button title="go to homepage" onPress={() => this.props.navigation.goBack()} />
-        <Button title="改变主题" onPress={() => this.props.navigation.setParams({theme:{
-          tintColor:'orange',
-          updateTime: new Date().getTime()
-        }})} />
+      <View style={{flex:1,backgroundColor:'gray'}}>
+        <Text style={styles.welcome}>欢迎来到page4</Text>
+
+        <Button title="Toggle Drawer" onPress={() => this.props.navigation.navigate('DrawerToggle')} />
+        <Button title="Open Drawer" onPress={() => this.props.navigation.navigate('DrawerOpen')} />
+        <Button title="Go to Page5" onPress={() => this.props.navigation.navigate('Page5')} />
       </View>
     );
   }

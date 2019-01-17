@@ -19,6 +19,10 @@ export default class Page2 extends Component<Props> {
       <View style={styles.container}>
         <Text style={styles.welcome}>欢迎来到page2</Text>
         <Button title="go to homepage" onPress={() => this.props.navigation.goBack()} />
+        <Button title="改变主题" onPress={() => this.props.navigation.setParams({theme:{
+          tintColor:'red',
+          updateTime: new Date().getTime()
+        }})} />
       </View>
     );
   }
