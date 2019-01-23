@@ -22,8 +22,8 @@ export default class Page4 extends Component<Props> {
       <View style={{flex:1,backgroundColor:'gray'}}>
         <Text style={styles.welcome}>欢迎来到page4</Text>
 
-        <Button title="Toggle Drawer" onPress={() => this.props.navigation.navigate('DrawerToggle')} />
-        <Button title="Open Drawer" onPress={() => this.props.navigation.navigate('DrawerOpen')} />
+        <Button title="Toggle Drawer" onPress={() => this.props.navigation.toggleDrawer()} />
+        <Button title="Open Drawer" onPress={() => this.props.navigation.openDrawer()} />
         <Button title="Go to Page5" onPress={() => this.props.navigation.navigate('Page5')} />
       </View>
     );
