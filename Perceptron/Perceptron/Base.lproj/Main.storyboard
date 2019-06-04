@@ -19,10 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pgg-dt-Hls">
-                                <rect key="frame" x="167.66666666666666" y="124" width="79" height="29"/>
+                                <rect key="frame" x="144.66666666666666" y="124" width="124.99999999999997" height="29"/>
                                 <segments>
                                     <segment title="And"/>
                                     <segment title="Or"/>
+                                    <segment title="XOR"/>
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gc8-Ot-bsm">

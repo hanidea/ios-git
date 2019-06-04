@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     //学习率
     let rate:Float = 0.2
     //训练次数
-    let n = 50
+    let n = 500
     //训练集
     var trainData:[[Float]]=[[0.0,0.0],[0.0,1.0],[1.0,0.0],[1.0,1.0]]
     var tempData:[[Float]]=[]
@@ -101,6 +101,9 @@ class ViewController: UIViewController {
         //或操作
         case 1:
             self.train(label: [0.0,1.0,1.0,1.0])
+        //异或操作
+        case 2:
+            self.train(label: [0.0,1.0,1.0,0.0])
         default:
             return
         }
